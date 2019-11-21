@@ -36,7 +36,7 @@ class CommandGripperActionServer(object):
                                                             CommandRobotiqGripperAction, 
                                                             execute_cb=self.execute_cb, 
                                                             auto_start = False)
-        self._joint_trajectory_action_server = actionlib.SimpleActionServer(namespace + "robotiq_controller/follow_joint_trajectory", 
+        self._joint_trajectory_action_server = actionlib.SimpleActionServer(namespace + "follow_joint_trajectory",
                                                             FollowJointTrajectoryAction, 
                                                             execute_cb=self.execute_joint_trajectory_cb,
                                                             auto_start = False)
