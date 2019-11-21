@@ -1,3 +1,22 @@
+For Xamyab robot, clone this package to your `catkin_ws/src` and run `catkin_make`.
+
+- Test launch files for 1 gripper (make sure to find the USB port you're connecting to; default is `ttyUSB0`):
+```javascript
+# Connect and move 140 mm gripper 
+roslaunch robotiq_2f_gripper_control test_140mm_gripper.launch comport:=/dev/ttyUSB0
+
+# Simulate 140 mm gripper
+roslaunch robotiq_2f_gripper_control test_140mm_gripper.launch sim:=true
+```
+- To run dual grippers for Xamyab (one real and one simulated):
+```javascript
+roslaunch robotiq_2f_gripper_control xamyab_robotiq_dual_action_server.launch left_sim:=true right_sim:=false
+```
+**Related documentation:**
+- [MoveIt! for Xamyab](https://github.com/olinrobotics/hiro/wiki/MoveIt!-for-Xamyab#3-working-with-real-hardware)
+- [Setting up the Robotiq 2F 140 Gripper](https://github.com/olinrobotics/hiro/wiki/Tutorial:-Setting-up-the-Robotiq-2F-140-Gripper)
+
+# Original README Content
 This package contains the necesary files to connect and control the Robotiq 2 finger adaptive grippers (85mm and 140mm stroke) of the `C` series through a **USB port using the Modbus RTU communication protocol**. (Currently only URDF descriptions of models C3 are available)
 
 ![C3 models](https://user-images.githubusercontent.com/8356912/52115661-78872b00-260f-11e9-8eb3-960747131df6.jpg)
