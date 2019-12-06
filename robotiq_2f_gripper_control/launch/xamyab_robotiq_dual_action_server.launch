@@ -2,8 +2,8 @@
     <!-- Indicate that the right gripper is real and left gripper is simulated-->
     <arg name="right_sim" default="false"/>
     <arg name="left_sim" default="true"/>
-    <arg name="right_gripper_comport" default="/dev/ttyRobotiq1" unless="$(arg right_sim)"/>
-    <arg name="left_gripper_comport" default="/dev/ttyRobotiq0" unless="$(arg left_sim)"/>
+    <arg name="right_gripper_comport" default="/dev/ttyUSB0" unless="$(arg right_sim)"/>
+    <arg name="left_gripper_comport" default="/dev/ttyUSB1" unless="$(arg left_sim)"/>
     <arg name="right_gripper_stroke" default="0.140"/>
     <arg name="left_gripper_stroke" default="0.140"/>
     <arg name="rate" default="50"/>
