@@ -3,10 +3,10 @@ For Xamyab robot, clone this package to your `catkin_ws/src` and run `catkin_mak
 - Test launch files for 1 gripper (make sure to find the USB port you're connecting to; default is `ttyUSB0`):
 ```javascript
 # Connect and move 140 mm gripper 
-roslaunch robotiq_2f_gripper_control test_140mm_gripper.launch comport:=/dev/ttyUSB0
+roslaunch robotiq_2f_gripper_control_xamyab test_140mm_gripper.launch comport:=/dev/ttyUSB0
 
 # Simulate 140 mm gripper
-roslaunch robotiq_2f_gripper_control test_140mm_gripper.launch sim:=true
+roslaunch robotiq_2f_gripper_control_xamyab test_140mm_gripper.launch sim:=true
 ```
 - To run dual grippers for Xamyab (one real and one simulated):
 ```javascript
