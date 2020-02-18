@@ -5,7 +5,7 @@
     <arg name="baud" default="115200" unless="$(arg sim)"/> 
 
     <!-- Launch action server for gripper -->
-    <include file="$(find robotiq_2f_gripper_control)/launch/robotiq_action_server.launch">
+    <include file="$(find robotiq_2f_gripper_control_xamyab)/launch/robotiq_action_server.launch">
         <arg name="comport" value="$(arg comport)" unless="$(arg sim)"/>
         <arg name="baud" value="$(arg baud)" unless="$(arg sim)"/>
         <arg name="stroke" value="0.140"/>
@@ -15,7 +15,7 @@
     </include>
 
     <!-- Launch action client example  -->
-    <node pkg="robotiq_2f_gripper_control" type="robotiq_2f_action_client_example.py" 
+    <node pkg="robotiq_2f_gripper_control_xamyab" type="robotiq_2f_action_client_example.py" 
         name="robotiq_140_client" output="screen">
         <param name="action_name" value="command_robotiq_action" />
     </node>

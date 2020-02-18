@@ -2,16 +2,16 @@
     <!-- Indicate that the right gripper is real and left gripper is simulated-->
     <arg name="right_sim" default="false"/>
     <arg name="left_sim" default="true"/>
-    <arg name="right_comport" default="/dev/ttyUSB0" unless="$(arg right_sim)"/>
-    <arg name="left_comport" default="/dev/ttyUSB1" unless="$(arg left_sim)"/>
+    <arg name="right_gripper_comport" default="/dev/ttyRobotiq1" unless="$(arg right_sim)"/>
+    <arg name="left_gripper_comport" default="/dev/ttyRobotiq0" unless="$(arg left_sim)"/>
     <arg name="right_gripper_stroke" default="0.140"/>
     <arg name="left_gripper_stroke" default="0.140"/>
     <arg name="rate" default="50"/>
     <arg name="run_test" default="true"/>
 
     <!-- Launch action server for gripper -->
-    <include ns="right_gripper" file="$(find robotiq_2f_gripper_control)/launch/robotiq_action_server.launch">
-        <arg name="comport" value="$(arg right_comport)" unless="$(arg right_sim)"/>
+    <include ns="right_gripper" file="$(find robotiq_2f_gripper_control_xamyab)/launch/robotiq_action_server.launch">
+        <arg name="comport" value="$(arg right_gripper_comport)" unless="$(arg right_sim)"/>
         <arg name="stroke" value="$(arg right_gripper_stroke)"/>
         <arg name="joint_name" value="rgripper_finger_joint"/>
         <arg name="verbose" value="true"/>
@@ -21,8 +21,8 @@
     </include>
 
     <!-- Launch action server for gripper -->
-    <include ns="left_gripper" file="$(find robotiq_2f_gripper_control)/launch/robotiq_action_server.launch">
-        <arg name="comport" value="$(arg left_comport)" unless="$(arg left_sim)"/>
+    <include ns="left_gripper" file="$(find robotiq_2f_gripper_control_xamyab)/launch/robotiq_action_server.launch">
+        <arg name="comport" value="$(arg left_gripper_comport)" unless="$(arg left_sim)"/>
         <arg name="stroke" value="$(arg left_gripper_stroke)"/>
         <arg name="joint_name" value="lgripper_finger_joint"/>
         <arg name="verbose" value="true"/>

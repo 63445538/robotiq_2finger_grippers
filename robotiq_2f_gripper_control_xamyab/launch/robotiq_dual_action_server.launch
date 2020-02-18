@@ -8,7 +8,7 @@
     <arg name="run_test" default="true"/>
 	        
      <!-- Launch action server for gripper -->
-    <include ns="right_gripper" file="$(find robotiq_2f_gripper_control)/launch/robotiq_action_server.launch">
+    <include ns="right_gripper" file="$(find robotiq_2f_gripper_control_xamyab)/launch/robotiq_action_server.launch">
         <arg name="comport" value="$(arg right_gripper_comport)" unless="$(arg sim)"/>
         <arg name="stroke" value="$(arg right_gripper_stroke)"/>
         <arg name="joint_name" value="right_gripper_finger_joint"/>
@@ -19,13 +19,13 @@
     </include>
 
     <!-- RIGHT GRIPPER CLIENT -->
-    <node ns="right_gripper" pkg="robotiq_2f_gripper_control" type="robotiq_2f_action_client_example.py" 
+    <node ns="right_gripper" pkg="robotiq_2f_gripper_control_xamyab" type="robotiq_2f_action_client_example.py" 
         name="robotiq_85_client" output="screen" if="$(arg run_test)">
         <param name="action_name" value="command_robotiq_action" />
     </node>
 
      <!-- Launch action server for gripper -->
-    <include ns="left_gripper" file="$(find robotiq_2f_gripper_control)/launch/robotiq_action_server.launch">
+    <include ns="left_gripper" file="$(find robotiq_2f_gripper_control_xamyab)/launch/robotiq_action_server.launch">
         <arg name="comport" value="$(arg left_gripper_comport)" unless="$(arg sim)"/>
         <arg name="stroke" value="$(arg right_gripper_stroke)"/>
         <arg name="joint_name" value="left_gripper_finger_joint"/>
@@ -36,7 +36,7 @@
     </include>
 
     <!-- LEFT GRIPPER CLIENT -->
-    <node ns="left_gripper" pkg="robotiq_2f_gripper_control" type="robotiq_2f_action_client_example.py" 
+    <node ns="left_gripper" pkg="robotiq_2f_gripper_control_xamyab" type="robotiq_2f_action_client_example.py" 
         name="robotiq_85_client" output="screen" if="$(arg run_test)">
         <param name="action_name" value="command_robotiq_action" />
     </node>

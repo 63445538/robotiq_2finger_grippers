@@ -10,7 +10,7 @@
 	        
     <!-- Robotiq 2finger_gripper action Server -->
     
-    <node pkg="robotiq_2f_gripper_control" type="robotiq_2f_action_server.py" 
+    <node pkg="robotiq_2f_gripper_control_xamyab" type="robotiq_2f_action_server.py" 
         name="robotiq_2f_action_server" respawn="false" output="screen">
         <param name="comport" value="$(arg comport)" />
         <param name="baud" value="$(arg baud)" />
