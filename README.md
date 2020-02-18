@@ -10,7 +10,7 @@ roslaunch robotiq_2f_gripper_control_xamyab test_140mm_gripper.launch sim:=true
 ```
 - To run dual grippers for Xamyab (one real and one simulated):
 ```javascript
-roslaunch robotiq_2f_gripper_control xamyab_robotiq_dual_action_server.launch left_sim:=true right_sim:=false
+roslaunch robotiq_2f_gripper_control_xamyab xamyab_robotiq_dual_action_server.launch left_sim:=true right_sim:=false
 ```
 **Related documentation:**
 - [MoveIt! for Xamyab](https://github.com/olinrobotics/hiro/wiki/MoveIt!-for-Xamyab#3-working-with-real-hardware)
